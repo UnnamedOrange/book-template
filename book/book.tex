@@ -13,6 +13,12 @@
 
 \begin{document}
 
+	% Support Biber with texify.
+	\makeatletter
+	\immediate\write\@mainaux{\noexpand\bibstyle{}}%
+	\immediate\write\@mainaux{\noexpand\bibdata{}}
+	\makeatother
+
 	\maketitle
 
 	\chapter*{前言}
@@ -25,5 +31,7 @@
 	\mainmatter
 
 	\input{01_样例章节/collection}
+
+	\printbibliography[heading=bibintoc, title=\ebibname]
 
 \end{document}
