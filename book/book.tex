@@ -1,6 +1,13 @@
 \documentclass[lang=cn, device=normal, color=blue, titlestyle=hang, scheme=english, mode=fancy, citestyle=gb7714-2015, bibstyle=gb7714-2015, toc=onecol, 11pt]{elegantbook}
 \setcounter{tocdepth}{1}
 \ExecuteBibliographyOptions{sorting=gb7714-2015}
+\addbibresource[location=local]{reference.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{标题}
 \subtitle{副标题}
@@ -13,25 +20,26 @@
 
 \begin{document}
 
-	% Support Biber with texify.
-	\makeatletter
-	\immediate\write\@mainaux{\noexpand\bibstyle{}}%
-	\immediate\write\@mainaux{\noexpand\bibdata{}}
-	\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
 
-	\maketitle
+\maketitle
 
-	\chapter*{前言}
-	\markboth{前言}{前言}
+\chapter*{前言}
+\markboth{前言}{前言}
 
-	\input{00_犄角旮旯/前言}
+\input{00_犄角旮旯/前言}
 
-	\tableofcontents
+\tableofcontents
 
-	\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
 
-	\input{01_样例章节/collection}
+\input{01_样例章节/collection}
 
-	\printbibliography[heading=bibintoc, title=\ebibname]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\printbibliography[heading=bibintoc, title=\ebibname]
 
 \end{document}
